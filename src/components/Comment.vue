@@ -26,7 +26,7 @@
                       </v-list-item-subtitle>
                     </v-list-item-content>
                     <v-card-actions>
-                      <v-icon color="grey">mdi-shark-fin</v-icon>
+                       <v-icon color="red" @click="deleteComment(comment.id)" small>delete</v-icon>
                       <v-btn icon>
                         <v-icon color="pink">mdi-heart-outline</v-icon>
                       </v-btn>
@@ -66,6 +66,14 @@ export default {
     cards: ['Today'],
     comments: [],
   }),
+  methods: {
+      deleteComment(id) {
+       if (!confirm('コメントを削除してよろしいですか？')) {
+          return
+        }
+        firebase.collection('comment').doc(id).delete()
+      },
+    },
 }
 </script>
 
