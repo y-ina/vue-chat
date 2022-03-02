@@ -22,7 +22,7 @@
         <v-card-actions>
           <v-icon
             color="grey"
-            @click="deleteComment(comment.id)" 
+            @click="deleteComment(data)" 
           >mdi-delete</v-icon>
           <v-icon
             click="likeComennt"
@@ -50,7 +50,6 @@ export default {
     const snapshot = await db.get()
 
     snapshot.forEach(doc => {
-      console.log("DBの中身は", doc.data())
       this.comments.push(doc.data())
       })
 
@@ -60,10 +59,11 @@ export default {
   }),
   methods: {
       deleteComment(id) {
-      if (!confirm('コメントを削除してよろしいですか？')) {
-          return
-        }
-        firebase.collection('comment').doc(id).delete()
+        console.log(id);
+      // if (!confirm('コメントを削除してよろしいですか？')) {
+      //     return
+      //   }
+      //   firebase.firestore().collection('comment').doc(id).delete()
       },
     },
 }
