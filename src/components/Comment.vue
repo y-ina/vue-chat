@@ -46,7 +46,7 @@ import firebase from "@/firebase/firebase"
 
 export default {
   async created() {
-    const db = firebase.firestore().collection('comment').orderBy('createdAt')
+    const db = firebase.firestore().collection('comment').orderBy('createdAt', 'desc')
     const snapshot = await db.get()
 
     snapshot.forEach(doc => {
