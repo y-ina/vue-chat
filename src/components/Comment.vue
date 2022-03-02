@@ -21,7 +21,7 @@
 
         <v-card-actions>
           <v-icon
-            color="blue"
+            color="grey"
             @click="deleteComment(comment.id)" 
           >mdi-delete</v-icon>
           <v-icon

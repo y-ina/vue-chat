@@ -1,9 +1,9 @@
 <template>
   <v-app>
     <v-content>
+      <CommentForm />
       <Header />
       <Sidebar />
-      <CommentForm />
       <router-view/>
     </v-content>
   </v-app>

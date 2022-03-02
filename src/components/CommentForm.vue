@@ -2,15 +2,12 @@
   <div>
     <!--フォームの表示ボタン-->
     <v-btn
-        color="blue"
-        dark
-        center
-        fab
-        fixed
-        right
+        block
+        color="cyan lighten-4"
         @click="showCreateForm"
     >
-      <v-icon>mdi-chat-plus-outline</v-icon>
+      コメント作成
+      <v-icon>mdi-pencil</v-icon>
     </v-btn>
     <v-dialog v-model="displayForm" max-width="500px">
       <!--コメント入力フォーム-->
